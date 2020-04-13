@@ -1,0 +1,7 @@
+
+* * * * * /startalk/qtalk_search/venv/bin/python3  /startalk/startalk_all_average/service/red_envelope/crontab_refund_red_env.py&>/startalk/startalk_all_average/log/crontab_refund_red_env.log
+
+* * * * * /startalk/qtalk_search/venv/bin/python3 /startalk/startalk_all_average/service/red_envelope/crontab_transfer_red_env.py&>/startalk/startalk_all_average/log/crontab_transfer_red_env.log
+
+* * * * * /startalk/qtalk_search/venv/bin/python3  /startalk/startalk_all_average/service/red_envelope/crontab_red_env_send_qtalk_message.py&>/startalk/startalk_all_average/log/crontab_red_env_send_qtalk_message.log
+
