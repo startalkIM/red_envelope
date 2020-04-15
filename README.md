@@ -61,11 +61,14 @@
     1.环境python3.7
     2.source /startalk/qtalk_search/venv/bin/activate 进入虚拟环境
     3.pip3 install -r requirement.txt
-    4.加入发送红包,拆红包,退红包的定时任务:
+    4.使用pg客户端生成相应表格
+    psql -f service/red_envelope/create_table.sql
+    psql -f service/all_average/create_aa_table.sql
+    5.加入发送红包,拆红包,退红包的定时任务:
        # crontab ./sudo_crontab.txt
        查看定时任务启动:
        # crontab -e
-    5.启动:
+    6.启动:
        # ./red_envelope.sh
-    6.停止程序:
+    7.停止程序:
        # ./stop.sh
