@@ -2,6 +2,7 @@
 cd /startalk/red_envelope
 source /startalk/qtalk_search/venv/bin/activate
 if [[ $1 == 'init' ]]; then
+pip3 install -r /startalk/red_envelope/requirements.txt
 echo -e "\
 [program:red_envelope]
 command     = /startalk/qtalk_search/venv/bin/gunicorn -w6 start_service:app -b 0.0.0.0:5002
@@ -15,7 +16,7 @@ autorestart=true
 redirect_stderr         = true
 stdout_logfile_maxbytes = 50MB
 stdout_logfile_backups  = 10
-stdout_logfile          = /startalk/startalk_all_average/log/access.log" >> /startalk/qtalk_search/conf/supervisor.conf
+stdout_logfile          = /startalk/red_envelope/log/access.log" >> /startalk/qtalk_search/conf/supervisor.conf
 fi
 supervisorctl -c /startalk/qtalk_search/conf/supervisor.conf update
 supervisorctl -c /startalk/qtalk_search/conf/supervisor.conf restart red_envelope

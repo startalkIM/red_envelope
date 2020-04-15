@@ -68,7 +68,7 @@
        # crontab ./sudo_crontab.txt
        查看定时任务启动:
        # crontab -e
-    6.启动:
-       # ./red_envelope.sh
+    6.第一次启动:
+       # ./red_envelope.sh init
     7.停止程序:
        # ./stop.sh
