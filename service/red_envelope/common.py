@@ -137,10 +137,13 @@ def is_int(number):
     try:
         if number is None or len(str(number)) == 0:
             return False
-        result = re.match(r'^\d*$', str(number))
+        result = re.match(r'^\d+$', str(number))
         if result:
             return True
         else:
+            result = re.match(r'\d+\.0*$', str(number))
+            if result:
+                return True
             return False
     except Exception as e:
         return False

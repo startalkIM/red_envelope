@@ -50,6 +50,9 @@ def current(user_id=None):
             }
     # 获取本页面必要参数
     current_params = get_request_need_args(**current_params)
+    if '@' in user_id:
+        current_params['host_domain'] = user_id.split('@')[1]
+        user_id = user_id.split('@')[0]
     # 创建红包 current_params['user_id'] 会被覆盖成当前登录用户
     rels = RedEnvelopeSql()
     rels.write_error_log("red_envelope", "建红包原始参数:%s" % (json.dumps(current_params)))
